@@ -17,14 +17,8 @@ class LinkedList:  # list of nodes
             self.end = new_node  # here we just add new node by replace end node
             return
 
-        self.end.next = new_node  # this method match faster than old
-        self.end = new_node
-
-        # old slise of code, here we need to check all nodes in list to find end - it's too long
-        """current_node = self.head
-        while current_node.next:
-            current_node = current_node.next
-        current_node.next = new_node"""
+        self.end.next = new_node  # this method match faster
+        self.end = new_node       # cuz we don't need to check all nodes in list to find end
 
     def append_head(self, data):  # add new node at beginning
         new_node = Node(data)
